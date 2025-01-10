@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: casemind
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: 'https://github.wdf.sap.corp/I078976/casemind-app.git'
+    targetRevision: HEAD
+    path: .
+    helm:
+      valueFiles:
+        - values.yaml
+  destination:
+    server: 'https://kubernetes.default.svc'
+    namespace: casemind
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
