@@ -6,7 +6,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: 'https://github.wdf.sap.corp/I078976/casemind-app.git'
+    repoURL: 'https://github.com/Krishnav1983/casemind-app.git'
     targetRevision: HEAD
     path: .
     helm:
